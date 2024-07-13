@@ -1,0 +1,22 @@
+{
+  "name": "namreact",
+  "version": "1.0.0",
+  "description": "https://legacy.reactjs.org/docs/cdn-links.html",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ishansinghtomar/NamReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ishansinghtomar/NamReact/issues"
+  },
+  "homepage": "https://github.com/Ishansinghtomar/NamReact#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
