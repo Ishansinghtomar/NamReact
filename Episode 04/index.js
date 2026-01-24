@@ -29,11 +29,17 @@ const RestCard=(props)=>{
                     <div className="logo1">
                         <img src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/"+data.info.cloudinaryImageId} alt="" />
                     </div>
-                    <h3>{name}</h3>
-                    <h4>{avgRating}</h4>
-                    <h4>{cuisines.join(",")}</h4>
-                    <h4>{costForTwo}</h4>
-                    <h4>{sla.slaString}</h4>
+                   <div className="card-info">
+  <h3 className="name">{name}</h3>
+
+  <div className="meta">
+    <span className="rating">{avgRating} ⭐</span>
+    <span className="sla">{sla?.slaString}</span>
+  </div>
+  <p className="cuisines">{cuisines.join(", ")}</p>
+  <p className="cost">{costForTwo}</p>
+</div>
+
                 </div>
     )
 }

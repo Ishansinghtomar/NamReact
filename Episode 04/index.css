@@ -52,3 +52,43 @@ border-top-right-radius: 5%;
     display: flex;
     flex-wrap: wrap;
 }
+
+.card-info {
+  padding: 12px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.rating {
+  font-weight: 500;
+}
+
+.cuisines {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+
+  /* 🔥 prevents ugly overflow */
+  display: -webkit-box;
+  -webkit-line-clamp: 2;   /* show max 2 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cost {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
