@@ -6,8 +6,9 @@ import { useEffect } from "react"
 //update resdata to get mock data 
 
 const Body=()=>{
-    const [Dataorignal,setDataorignal]=useState([])
-    const [Datamain,setDatamain]=useState([])
+    const [Dataorignal,setDataorignal]=useState([]);
+    const [Datamain,setDatamain]=useState([]);
+    const [search,setsearch]=useState("");
     const fetchData= async ()=>{
         const apidata= await fetch(
             "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.567225&lng=77.3970354&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
@@ -23,12 +24,12 @@ const Body=()=>{
         fetchData();
     },[])
 
-if(Dataorignal.length === 0)
-{
-    return <h1>Loading...</h1>
-}
+// if(Dataorignal.length === 0)
+// {
+//     return <h1>Loading...</h1>
+// }optimised
 
-    return (
+return Dataorignal.length === 0 ?(<h1>Loading...</h1>):(
         <div className="body">
             <div className="Filter-btn">
                 <button className="btn" onClick={()=>{
