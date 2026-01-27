@@ -191,14 +191,37 @@
 }
 /* ================================== */
 
-
 .Filter-btn {
   display: flex;
   gap: 12px;
   margin: 20px 0;
-  flex-wrap: wrap;          /* 🔑 makes it responsive */
+  flex-wrap: wrap;          /* allows wrapping on small screens */
+  align-items: center;
 }
 
+/* 🔍 Search container */
+.search {
+  display: flex;
+  gap: 8px;
+  flex: 1;                  /* takes available space */
+  min-width: 260px;
+}
+
+/* 🔎 Input */
+.search-bar {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #222;
+}
+
+/* 🔘 Buttons */
 .Filter-btn .btn {
   padding: 10px 16px;
   border: none;
@@ -208,6 +231,7 @@
   font-size: 14px;
   font-weight: 500;
   transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
 .Filter-btn .btn:hover {
@@ -216,15 +240,20 @@
   transform: scale(1.05);
 }
 
-/* 📱 Mobile screens */
+/* 📱 Mobile */
 @media (max-width: 768px) {
   .Filter-btn {
     justify-content: center;
   }
 
+  .search {
+    width: 100%;
+    max-width: 320px;
+  }
+
   .Filter-btn .btn {
-    width: 100%;           /* full width buttons */
-    max-width: 300px;
+    width: 100%;
+    max-width: 320px;
     text-align: center;
   }
 }

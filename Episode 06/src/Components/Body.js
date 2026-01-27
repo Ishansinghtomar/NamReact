@@ -16,7 +16,7 @@ const Body=()=>{
         const json =await apidata.json();
 
      console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      let API_Data_value  =json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      let API_Data_value  =json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setDatamain(API_Data_value);
         setDataorignal(API_Data_value)
     }
@@ -32,6 +32,15 @@ const Body=()=>{
 return Dataorignal.length === 0 ?(<h1>Loading...</h1>):(
         <div className="body">
             <div className="Filter-btn">
+                          <div className="search">
+                    <input type="text"className="search-bar" value={search} placeholder="Search restaurants..." onChange={(e)=>setsearch(e.target.value)}/>
+                    <button className="btn" onClick={()=>{
+                        const searchfilter=Dataorignal.filter((res)=>( res?.info?.name.toLowerCase().includes(search.toLowerCase())
+                            
+                    ))
+                        setDatamain(searchfilter)
+                    }}>Search</button>
+                </div>
                 <button className="btn" onClick={()=>{
                     setDatamain(Dataorignal);
                 }
