@@ -2,6 +2,8 @@ import RestCard from "./RestCard"
 import resdata from "../utils/data"
 import { useState } from "react"
 import { useEffect } from "react"
+import { ResData_API } from "../utils/urls"
+import { Link } from "react-router-dom"
 
 //update resdata to get mock data 
 
@@ -10,13 +12,11 @@ const Body=()=>{
     const [Datamain,setDatamain]=useState([]);
     const [search,setsearch]=useState("");
     const fetchData= async ()=>{
-        const apidata= await fetch(
-            "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.567225&lng=77.3970354&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-        )
+        const apidata= await fetch(ResData_API)
         const json =await apidata.json();
 
      console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      let API_Data_value  =json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      let API_Data_value  =json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setDatamain(API_Data_value);
         setDataorignal(API_Data_value)
     }
@@ -70,7 +70,7 @@ return Dataorignal.length === 0 ?(<h1>Loading...</h1>):(
             <div className="res-container">
            {
             Datamain.map((resturarant)=>
-                <RestCard data={resturarant} key={resturarant.info.id} ></RestCard>
+               <Link className="main-links" key={resturarant.info.id} to={"/restaurant/"+resturarant.info.id}><RestCard data={resturarant}  ></RestCard></Link>
 
            )
            }
