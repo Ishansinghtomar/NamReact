@@ -5,7 +5,8 @@ import { useEffect } from "react"
 import { ResData_API } from "../utils/urls"
 import { Link } from "react-router-dom"
 
-//update resdata to get mock data 
+let dtype = window.innerWidth <= 768 ? 2 : 1;
+// API Sorted
 
 const Body=()=>{
     const [Dataorignal,setDataorignal]=useState([]);
@@ -16,7 +17,7 @@ const Body=()=>{
         const json =await apidata.json();
 
      console.log(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      let API_Data_value  =json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      let API_Data_value  =json?.data?.cards[dtype]?.card?.card?.gridElements?.infoWithStyle?.restaurants
         setDatamain(API_Data_value);
         setDataorignal(API_Data_value)
     }
