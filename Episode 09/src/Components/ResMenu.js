@@ -1,27 +1,28 @@
-import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
-import {Menu_API} from '../utils/urls'
-
+import useOnline from '../utils/useOnline';
+import useCardApi from '../utils/useCardApi';
 
 function ResMenu() {
 
-const [mainData,setDatamain]=useState([]);
-const[orignalData,setDataorignal]=useState([])
 const params=useParams()
+const mainData=useCardApi(params.resid) || [];
 
+// useEffect(()=>{
+//    fetchData()
+// },[])
 
-useEffect(()=>{
-   fetchData()
-},[])
+// const fetchData=async ()=>{
+// const apidata= await fetch(Menu_API+params.resid)
+// const json=await apidata.json()
+// console.log(json?.data?.cards)
 
-const fetchData=async ()=>{
-const apidata= await fetch(Menu_API+params.resid)
-const json=await apidata.json()
-console.log(json?.data?.cards)
+// setDatamain(json?.data?.cards)
+// setDataorignal(json?.data?.cards)
+// }
 
-setDatamain(json?.data?.cards)
-setDataorignal(json?.data?.cards)
-}
+const online=useOnline()
+if(online == false)
+  return "Check Your Internet Connection"
 
 if( mainData.length == 0)
     return( <h1>Loading</h1>)

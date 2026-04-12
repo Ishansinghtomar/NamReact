@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useEffect } from "react"
 import { ResData_API } from "../utils/urls"
 import { Link } from "react-router-dom"
+import useOnline from "../utils/useOnline"
 
 let dtype = window.innerWidth <= 768 ? 2 : 1;
 // API Sorted
@@ -29,6 +30,9 @@ const Body=()=>{
 // {
 //     return <h1>Loading...</h1>
 // }optimised
+const online=useOnline()
+if(online == false)
+  return "Check Your Internet Connection !!"
 
 return Dataorignal.length === 0 ?(<h1>Loading...</h1>):(
         <div className="body">
