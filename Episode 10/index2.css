@@ -1,0 +1,270 @@
+/* ================= HEADER ================= */
+
+.header {
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+  background-color: #fff;
+
+  border-bottom: 1px solid #e0e0e0;
+  box-sizing: border-box;
+}
+
+.img {
+  height: 48px;
+  cursor: pointer;
+}
+
+.nav-items ul {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-items ul li {
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+
+  padding: 8px 12px;
+  border-radius: 6px;
+
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.nav-items ul li:hover {
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+/* ================= SEARCH ================= */
+
+.Search {
+  padding: 10px 24px;
+}
+
+/* ================= RESTAURANT CARDS ================= */
+
+.res-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.res-card {
+  width: 220px;
+  height: 380px;
+  margin: 14px;
+  border-radius: 5%;
+
+  border: 1px solid transparent;
+  box-sizing: border-box;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.res-card:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+/* ================= CARD IMAGE ================= */
+
+.logo1 > img {
+  width: 220px;
+  height: 200px;
+  object-fit: cover;
+
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+
+/* ================= CARD CONTENT ================= */
+
+.card-info {
+  padding: 12px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.meta {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 6px;
+}
+
+.rating {
+  font-weight: 500;
+}
+
+.cuisines {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 6px;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.cost {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+
+/* ================= TABLET ================= */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 16px;
+  }
+
+  .nav-items ul {
+    gap: 12px;
+  }
+
+  .res-card {
+    width: 45%;
+    height: auto;
+  }
+
+  .logo1 > img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 480px) {
+  .header {
+    padding: 0 12px;
+  }
+
+  .img {
+    height: 40px;
+  }
+
+  .nav-items ul {
+    gap: 8px;
+  }
+
+  .nav-items ul li {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .res-card {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .logo1 > img {
+    height: 160px;
+  }
+
+  .name {
+    font-size: 16px;
+  }
+
+  .meta,
+  .cuisines,
+  .cost {
+    font-size: 13px;
+  }
+}
+/* ================================== */
+
+.Filter-btn {
+  display: flex;
+  gap: 12px;
+  margin: 20px 0;
+  flex-wrap: wrap;          /* allows wrapping on small screens */
+  align-items: center;
+}
+
+/* 🔍 Search container */
+.search {
+  display: flex;
+  gap: 8px;
+  flex: 1;                  /* takes available space */
+  min-width: 260px;
+}
+
+/* 🔎 Input */
+.search-bar {
+  flex: 1;
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-bar:focus {
+  border-color: #222;
+}
+
+/* 🔘 Buttons */
+.Filter-btn .btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.Filter-btn .btn:hover {
+  background-color: #222;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .Filter-btn {
+    justify-content: center;
+  }
+
+  .search {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .Filter-btn .btn {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+}
+
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ========================= */
+.main-links {
+  text-decoration: none;
+  color: inherit;
+}
